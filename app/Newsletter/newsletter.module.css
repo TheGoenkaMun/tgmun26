@@ -1,0 +1,177 @@
+/* Main container */
+.newsletter-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 50px 20px;
+  text-align: center;
+  background: linear-gradient(to right, #000000, #1a1a1a);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+.h2 {
+  font-size: 1.5rem;
+}
+
+/* Page heading */
+.newsletter-heading {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: red;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Newsletter Grid - Dynamic Columns */
+.newsletter-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Add fallback for older browsers */
+@supports not (display: grid) {
+  .newsletter-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  .newsletter-card {
+    flex: 1 1 calc(33.333% - 30px);
+    max-width: calc(33.333% - 30px);
+  }
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 992px) {
+  .newsletter-list {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .newsletter-container {
+    padding: 30px 15px;
+  }
+  .newsletter-heading {
+    font-size: 42px;
+  }
+  .newsletter-card h2 {
+    font-size: 22px;
+  }
+  .newsletter-desc {
+    font-size: 16px;
+  }
+  .newsletter-card {
+    flex: 1 1 calc(50% - 30px);
+    max-width: calc(50% - 30px);
+  }
+}
+
+@media (max-width: 600px) {
+  .newsletter-list {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .newsletter-container {
+    padding: 20px 10px;
+  }
+  .newsletter-heading {
+    font-size: 32px;
+  }
+  .newsletter-card {
+    padding: 30px; /* Increased padding to make the card bigger */
+  }
+  .newsletter-card h2 {
+    font-size: 20px;
+  }
+  .newsletter-desc {
+    font-size: 14px;
+  }
+  .newsletter-button {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+  .newsletter-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  .newsletter-heading {
+    font-size: 2.5rem; /* Increased heading size for mobile */
+  }
+}
+
+/* Newsletter Card - Increased Size */
+.newsletter-card {
+  background: rgba(30, 30, 30, 0.9);
+  padding: 50px; /* Increased padding to make the card larger */
+  border-radius: 14px; /* Slightly more rounded */
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 7px solid red; /* Thicker border for emphasis */
+  box-shadow: 0px 8px 24px rgba(255, 0, 0, 0.25); /* Larger shadow */
+  min-width: 350px; /* Ensure card is wider */
+  max-width: 100%;
+}
+
+.newsletter-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 15px rgba(255, 0, 0, 0.5);
+}
+
+/* Card Title */
+.newsletter-card h2 {
+  font-size: 2rem; /* Larger title */
+  margin-bottom: 16px;
+  color: red;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.newsletter-date {
+  font-size: 14px;
+  color: gray;
+  margin-bottom: 10px;
+}
+
+/* Card Description */
+.newsletter-desc {
+  font-size: 1.25rem; /* Larger description */
+  margin-bottom: 20px;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Bigger Button */
+.newsletter-button {
+  display: inline-block;
+  background-color: red;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 18px; /* Slightly bigger button */
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  text-align: center;
+}
+
+.newsletter-button:hover {
+  background-color: darkred;
+  transform: scale(1.1);
+}
+
+/* Newsletter Header */
+.newsletter-header {
+  align-items: center;
+  gap: 10px;
+}
+
+/* Newsletter Icon */
+.newsletter-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}

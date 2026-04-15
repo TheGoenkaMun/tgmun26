@@ -1,0 +1,189 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5rem;
+    gap: 5rem;
+}
+
+.bg {
+    position: absolute;
+    right: 0;
+    object-fit: cover;
+    opacity: 0.4;
+    width: autos;
+    height: auto;
+    z-index: 1; /* Ensure background is behind other elements */
+}
+
+.heading {
+    z-index: 1;
+    background-color: transparent;
+    font-size: 8rem;
+    margin-top: 5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.links {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5rem;
+}
+
+/* Ensure name and number stay in one line */
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 3rem; /* More spacing */
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    min-width: 0;
+}
+
+.title {
+    font-size: 1.35rem;
+    color: rgb(250, 247, 247);
+    font-weight: bold;
+}
+
+.number {
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+
+.email {
+    font-size: 2rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Increased width */
+.link {
+    display: flex;
+    width: 60%; /* Increased from 50% */
+    justify-content: space-between;
+    border-bottom: 1px solid #FFFFFF;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.socials {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    background-color: transparent;
+    z-index: 2; /* Ensure socials are above the background */
+}
+
+.socials a {
+    cursor: pointer;
+    background-color: transparent; /* Ensure no background color */
+}
+
+.whatsapp {
+    background-color: transparent; /* Ensure no background color */
+    width: 55px;
+    height: 55px;
+}
+
+.instagram {
+    background-color: transparent; /* Ensure no background color */
+    width: 55px;
+    height: 55px;
+}
+
+/* Responsive Fixes */
+@media (max-width: 1300px) {
+    .link {
+        width: 75%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .heading {
+        font-size: 6rem;
+    }
+    .email, .number, .title {
+        font-size: 1.5rem;
+    }
+    .link {
+        width: 85%; /* More width on medium screens */
+    }
+    .contact-info {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 968px) {
+    .container {
+        padding: 0 1rem;
+    }
+    .heading {
+        font-size: 3rem;
+    }
+    .email {
+        font-size: 1.2rem;
+    }
+    .title {
+        font-size: 1rem;
+    }
+    .number {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+    .link {
+        width: 90%;
+    }
+    .contact-info {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .heading {
+        font-size: 2.5rem;
+    }
+    .email, .number, .title {
+        font-size: 1rem;
+    }
+    .link {
+        width: 100%;
+        gap: 1rem;
+        flex-wrap: nowrap;
+        gap: 1rem;
+    }
+    .number {
+        font-size: 1.5rem; /* Increase font size for better visibility */
+        color: #ffffff; /* Ensure high contrast for readability */
+        text-align: center; /* Center align for better presentation */
+    }
+    .contact-info {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center align */
+        text-align: center;
+        gap: 1rem;
+        width: 100%;
+        padding: 0 1rem;
+        overflow-wrap: break-word; /* Ensure long text wraps */
+        word-wrap: break-word;
+        white-space: normal; /* Allow wrapping */
+    }
+
+    .title, .number {
+        display: block;
+        width: 100%; /* Ensure full width */
+        text-align: center;
+        font-size: 0.9rem;
+        white-space: normal; /* Prevent cutting off */
+        overflow-wrap: break-word; /* Allow breaking */
+        word-wrap: break-word;
+    }
+    .email {
+        font-size: 0.9rem;
+    }
+}
